@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY TODO</title>
+  <style>
+    #btn {
+      display: none;
+      
+    }
+
+    #name1, #date1 {
+      width: full;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+      justify-content: start;
+    }
+  </style>
+</head>
+<body>
+ <h1>my todo</h1>
+  <input type="text" id="input-name" placeholder="your name">
+  <input type="date" id="input-dob">
+  <button onclick="
+  add()
+  ">submit</button>
+  <p id="name1"></p>
+  <p id="date1"></p>
+
+  <button onclick="
+  delet()
+  " id="btn">Delete</button>
+
+  <script>
+    function delet() {
+    document.querySelector('#name1').innerHTML = ""
+    document.querySelector('#date1').innerHTML = ""
+    
+    }
+
+    function add() {
+      let me = document.querySelector('#input-name')
+      let me1 = me.value;
+      console.log(me1)
+      document.querySelector('#name1').innerHTML = `${me1}`
+      
+      let date = document.querySelector('#input-dob')
+      let me2 = date.value
+
+      document.querySelector('#date1').innerHTML = me2
+      document.querySelector('#btn').style.display =  "block"
+    }
+  </script>
+</body>
+</html>
